@@ -1,0 +1,26 @@
+{
+  "name": "book-directory",
+  "version": "1.0.0",
+  "description": "A fun project, built with Node.js and Express. For anyone, who wants to understand and work with, Routing, REST Api, HTTP Protocols, Database, Testing.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumeetprajapati1996/book-directory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumeetprajapati1996/book-directory/issues"
+  },
+  "homepage": "https://github.com/sumeetprajapati1996/book-directory#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
