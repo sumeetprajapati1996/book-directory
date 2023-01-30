@@ -4,8 +4,9 @@
   "description": "A fun project, built with Node.js and Express. For anyone, who wants to understand and work with, Routing, REST Api, HTTP Protocols, Database, Testing.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "build:css": "postcss ./public/styles/tailwind.css -o ./public/styles/app.css",
+    "start": "concurrently --kill-others \"npm:start-server\" \"npm:build-css\"",
+    "start-server": "nodemon server.js",
+    "build-css": "postcss -w ./public/styles/tailwind.css -o ./public/styles/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/sumeetprajapati1996/book-directory#readme",
   "dependencies": {
+    "concurrently": "^7.6.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
