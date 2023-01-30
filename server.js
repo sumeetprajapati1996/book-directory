@@ -1,10 +1,14 @@
+const express = require("express");
 const dotenv = require("dotenv");
+const path = require("path");
+const nunjucks = require("nunjucks");
+
 dotenv.config();
 
-const express = require("express");
 const app = express();
 
-const nunjucks = require("nunjucks");
+app.use(express.static(path.resolve(__dirname, "public")));
+
 nunjucks.configure("views", {
   autoescape: true,
   express: app,
