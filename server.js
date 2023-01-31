@@ -12,6 +12,8 @@ app.use(express.static(path.resolve(__dirname, "public")));
 nunjucks.configure("views", {
   autoescape: true,
   express: app,
+  noCache: false,
+  watch: true,
 });
 
 app.get("/", function (req, res) {
