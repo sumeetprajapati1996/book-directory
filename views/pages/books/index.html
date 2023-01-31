@@ -1,0 +1,13 @@
+{% extends "../../layouts/main.html" %}
+
+{% block title %}
+  <title>Books List</title>  
+{% endblock %}
+
+{% block body %}
+<ul>
+  {% for book in books %}
+    <li>{{book.id}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

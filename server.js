@@ -12,13 +12,18 @@ app.use(express.static(path.resolve(__dirname, "public")));
 nunjucks.configure("views", {
   autoescape: true,
   express: app,
-  noCache: false,
+  // noCache: false,
   watch: true,
 });
 
-app.get("/", function (req, res) {
-  res.render("index.njk", { page: "HOME PAGE" });
-});
+const homeRoutes = require('./routes/homeRoutes');
+app.use(homeRoutes)
+const bookRoutes = require('./routes/bookRoutes');
+app.use(bookRoutes);
+
+app.get('*', (req, res) => {
+  res.render('pages/404/index.html')
+})
 
 const port = process.env.PORT;
 app.listen(port, () => {
